@@ -1,20 +1,21 @@
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { StyleSheet, Text,  View, Button, Image,ScrollView,} from 'react-native';
+import { Table, Row, Rows } from 'react-native-table-component';
 
 const PilhaTelas = createNativeStackNavigator()
 
-function PrimeiraTela({  navigation }) {
+function PrimeiraTela({  navigation }) {    
     return (
         <View style={styles.container}>
             <View style={styles.tela}>
                 <Text style={styles.titulo}>Bem Vindo ao Instituto Federal Catarinense</Text>
-                <Button
+                <Button style={styles.botao}
                     title='Detalhes do Campus'
                     color="green"
                     onPress={() => navigation.navigate('Campus')}
                 />
-                <Button
+                <Button style={styles.botao}
                     title='Cursos'
                     color="green"
                     onPress={() => navigation.navigate('Cursos')}
@@ -26,7 +27,7 @@ function PrimeiraTela({  navigation }) {
 
 function Campus( { navigation} ){
     return (
-        <View style={styles.container}>
+        <ScrollView style={styles.container}>
             <View style={styles.tela}>
             <Text style={styles.titulo}>Instituto Federal Catarinense</Text>
             <Text style={styles.texto}>O Campus Ibirama do Instituto Federal Catarinense (IFC) é um espaço dedicado à educação, ciência e tecnologia na cidade de Ibirama, Santa Catarina. Com uma localização privilegiada na Rua Dr. Getúlio Vargas, o campus oferece cursos técnicos e superiores, promovendo o desenvolvimento acadêmico e a inovação na região. Além disso, o IFC Campus Ibirama contribui para a formação de profissionais qualificados e engajados com as demandas da sociedade.</Text>
@@ -34,13 +35,13 @@ function Campus( { navigation} ){
           style={styles.imagem}
           source={require('./Imagens/Ifc.jpg')}
         />
-            <Button
+            <Button style={styles.botao}
                 title='Voltar'
                 color="green"
                 onPress={function(){ navigation.goBack() }}
             />
             </View>
-        </View>
+        </ScrollView>
     )
 }
 
@@ -49,7 +50,7 @@ function Cursos( { navigation} ){
         <View style={styles.container}>
             <View style={styles.tela}>
             <Text style={styles.texto}>Os cursos técnicos integrados ao ensino médio permitem que os estudantes realizem suas atividades acadêmicas de forma integrada, ou seja, eles estudam tanto as disciplinas do ensino médio quanto as matérias técnicas relacionadas à área escolhida. Os alunos saem desses cursos com uma base sólida tanto no ensino médio quanto na formação técnica, o que os torna mais preparados para ingressar no mercado de trabalho ou continuar seus estudos em nível superior.</Text>
-            <Button
+            <Button style={styles.botao}
                 title='Vestuario'
                 color="green"
                 onPress={function(){
@@ -59,7 +60,7 @@ function Cursos( { navigation} ){
                     })
                 }}
             />
-            <Button
+            <Button style={styles.botao}
                 title='Administração'
                 color="green"
                 onPress={function(){
@@ -69,7 +70,7 @@ function Cursos( { navigation} ){
                     })
                 }}
             />
-            <Button
+            <Button style={styles.botao}
                 title='Informática'
                 color="green"
                 onPress={function(){
@@ -81,7 +82,7 @@ function Cursos( { navigation} ){
                     })
                 }}
             />
-            <Button
+            <Button style={styles.botao}
                 title='Voltar'
                 color="green"
                 onPress={function(){
@@ -94,27 +95,46 @@ function Cursos( { navigation} ){
 }
 
 function TelaCursos( {route, navigation} ){
+    var tabela = {
+        HPrimeiroAno:['Materias' , 'Carga Horaria'],
+        Dprimeiro:[
+            [' Hardwer e Softwer ' , '60']]
+    }
     return (
-         <View style={styles.container}>
-            
+        
+         <ScrollView style={styles.container}>
             <View style={styles.tela}>
             <Text style={styles.titulo}>{route.params.nome}</Text>
             <Text style={styles.texto}>{route.params.descricao}</Text>
-            <Text style={styles.tituloMenor}>Materias:</Text>
-            <Text style={styles.texto}>{route.params.materias}</Text>
-            <Text style={styles.tituloMenor}>Professores:</Text>
+            <Text style={styles.tituloMenor}>Materias</Text>
+            
+            <Table borderStyle={{borderWidth: 2, borderBlockColor: 'black'}}>
+                <Row data={tabela.HPrimeiroAno} style = {styles.tabela}></Row>
+                <Row data={tabela.Dprimeiro}></Row>
+            </Table>
+
+            <Text style={styles.tituloMenor}>Professores</Text>
+        
+            
+  
+
+
+
             <Image style={styles.imagem}source={route.params.imagemCurso}/>
             
-            <Button
+            <Button 
                 title='Voltar'
                 color="green"
+                
                 onPress={function(){
                     navigation.navigate('Cursos')
                 }}
+                
             />
             </View>
             
-        </View>
+
+        </ScrollView>
     )
 }
 
@@ -153,35 +173,37 @@ const styles = StyleSheet.create({
     flexDirection: "column",
     flex: 1,
     backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'top',
     width: '100%',
-
+    height: '200%'
   },
   titulo: {
     marginTop: '10%',
     fontSize: 25,
-     textAlign: 'center'
+    textAlign: 'center'
   },
   tituloMenor: {
-    fontSize: 20,
-     textAlign: 'center'
+    fontSize: 20
   },
   texto: {
     marginTop: '10%',
     fontSize: 15
   },
 imagem: {
-  marginTop: '15%',
+  marginTop: '8%',
   width: '100%',
-  height: '40%'
+  height: 300
 },
   tela: {
     gap: 10,
     flexDirection: "column",
     flex: 1,
-    alignItems: 'center',
-    justifyContent: 'top',
+    marginLeft:'10%',
     width: '80%',
-  }
+  },
+  botao:{
+    width: '50%'
+  },
+  tabela: { flex: 1, padding: 16, paddingTop: 30, backgroundColor: '#fff' },
+  head: { height: 40, backgroundColor: '#f1f8ff' },
+  text: { margin: 6 }
 });
