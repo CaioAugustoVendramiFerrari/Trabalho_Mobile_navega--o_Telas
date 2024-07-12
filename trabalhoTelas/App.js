@@ -56,7 +56,31 @@ function Cursos( { navigation} ){
                 onPress={function(){
                     navigation.navigate('TelaCursos',{
                         nome:"Vestuario",
-                        descricao: "Já o curso técnico em Vestuário prepara os alunos para atuarem na indústria têxtil e de confecção de vestuário. Durante o curso, eles aprendem sobre modelagem, corte, costura, qualidade do produto e supervisão do processo de confecção. Os egressos desse curso têm um amplo mercado de trabalho, podendo trabalhar em empresas de moda, confecções e ateliês."
+                        descricao: "O Curso técnico em Vestuário prepara os alunos para atuarem na indústria têxtil e de confecção de vestuário. Durante o curso, eles aprendem sobre modelagem, corte, costura, qualidade do produto e supervisão do processo de confecção. Os egressos desse curso têm um amplo mercado de trabalho, podendo trabalhar em empresas de moda, confecções e ateliês.",
+                        imagemCurso: require('./Imagens/Veste.jpg'),
+                        cabecalho:["Materia", "Horas", "Professores"],
+                        dados: [
+                            ["Desenho de Moda e Ilustração", 60, "Francisleth"],
+                            ['História do Vestuário', 60, 'Iabela'],
+                            ['Projeto Integrador I', 60 , 'Isanela'],
+                            ['Tecnologia da Costura I', 60, 'Jonathan'],
+                            ['Tecnologia Têxtil', 60 ,'Ana Silvia']
+                        ],
+                        dados2: [
+                            ["Desenho Técnico de Vetuário e Têxtil",  60, "Márcio"],
+                            ["Modelagem Plana e Tecnologia", 120, 'Márcio'],
+                            ['Tecnologia e Métodos no Processo Produtivo', 60, 'Isabela'],
+                            ['Projeto Integrador II', 60, 'Ana Silva'],
+                            ['tecnologia da Costura II', 60, 'Jonathan']
+                        ],
+                        dados3:[
+                            ["Administração e Empreendedorismo", 60, 'Jetter'],
+                            ['Beneficiamento Têxtil', 120, 'Ana Silvia'],
+                            ["Projeto Integrador III", 60 , 'Franscilth'],
+                            ["Desenvolvimento de Produto Sutentável", 60, 'Ana Silvia'],
+                            ["Higiene e Segurança do Trabalho", 60, 'Márcio'],
+                            ["Laboratório de Moulage e Confecção", 60, 'Isabela']
+                        ],
                     })
                 }}
             />
@@ -66,7 +90,29 @@ function Cursos( { navigation} ){
                 onPress={function(){
                     navigation.navigate('TelaCursos',{
                         nome:"Administração",
-                        descricao: "O curso técnico em Administração prepara os estudantes para atuar em diversas áreas, como gestão, finanças, recursos humanos e marketing. Durante o curso, os alunos adquirem conhecimentos em administração de empresas, contabilidade, empreendedorismo e legislação. Com essa formação, os egressos estarão aptos a trabalhar tanto em empresas públicas quanto privadas, além de poderem empreender e gerenciar seus próprios negócios."
+                        descricao: "O curso técnico em Administração prepara os estudantes para atuar em diversas áreas, como gestão, finanças, recursos humanos e marketing. Durante o curso, os alunos adquirem conhecimentos em administração de empresas, contabilidade, empreendedorismo e legislação. Com essa formação, os egressos estarão aptos a trabalhar tanto em empresas públicas quanto privadas, além de poderem empreender e gerenciar seus próprios negócios.",
+                        imagemCurso: require('./Imagens/Administração.png'),
+                        cabecalho:["Materia", "Horas", "Professores"],
+                        dados: [
+                            ["Economia", 60, "Kopelke"],
+                            ['Fundamentos da Administração', 60, 'Jeter'],
+                            ['Gestão de Pessoas', 60 , 'Kopelke'],
+                            ['Gestão de serviços', 60, 'Jeter'],
+                            ['Projeto Integrador', 60 ,'Jeter']
+                        ],
+                        dados2: [
+                            ["Estatística e Matemática Financeira",  60, "Tiago Araujo"],
+                            ["Marketing", 60, 'Paulo'],
+                            ['Planejamento Estrátegico', 60, 'Paulo'],
+                            ['Gestão da Produção Logíca', 90, 'kopelke'],
+                            ['Projeto Integrador II', 60, 'Jeter']
+                        ],
+                        dados3:[
+                            ["Administração da Tecnologia da Informação", 60, 'Paulo'],
+                            ['Administração Financeira', 90, 'Tiago Araujo'],
+                            ["Projeto Integrador III", 60 , 'Jeter'],
+                            ["Responsabilidade Social Emprearial", 60 , 'Kopelke']
+                        ]
                     })
                 }}
             />
@@ -77,8 +123,27 @@ function Cursos( { navigation} ){
                     navigation.navigate('TelaCursos',{
                         nome:"Técnico em Informática",
                         descricao: "Na área de Informática, o curso técnico capacita os estudantes para atuarem no campo da tecnologia da informação. Durante o curso, eles aprendem sobre programação, redes, sistemas operacionais, banco de dados e desenvolvimento de software. Os profissionais formados nessa área podem trabalhar como programadores, analistas de suporte, administradores de redes e desenvolvedores de aplicativos.",
-                        materias:  "Fundamentos da Informática, Hardware e Sistemas Operacionais, Lógica de Programação, Projeto Integrador I, Desenvolvimento Web, Banco de Dados, Engenharia de Software I, Programação I, Projeto Integrador II, Redes, Empreendedorismo, Programação II, Projeto Integrador III, Administração de Redes ",             
-                        imagemCurso: require('./Imagens/Informatica.jpg')
+                        imagemCurso: require('./Imagens/Informatica.jpg'),
+                        cabecalho:["Materia", "Horas", "Professores"],
+                        dados: [
+                            ["Hardware e Sistemas Operacionais", 120, "Bruno Guilhen"],
+                            ['Fundamentos da Informática', 60, 'Tiago Funk'],
+                            ['Lógica de Programação', 120 , 'Eduardo Stahnke'],
+                            ['Projeto Integrador I', 30, 'Rodrigo Nogueira'],
+                            ['Desenvolvimento Web', 60 ,'Tiago Funk']
+                        ],
+                        dados2: [
+                            ["Banco de Dados",  90, "Rodrigo Nogueira"],
+                            ["Engenharia de Software I", 60, 'Tiago Funk'],
+                            ['programação I', 120, 'Eduardo Stahnke'],
+                            ['Projeto Integrador II', 30, 'Rodrigo Nogueira'],
+                            ['Redes', 60, 'Bruno Guilhen']
+                        ],
+                        dados3:[
+                            ["Emprededorismo", 60, 'Tiago Araujo'],
+                            ['Programação II', 120, 'Tiago Funk'],
+                            ["Projeto Integrador III", 60 , 'Rodrigo Nogueira']
+                        ],
                     })
                 }}
             />
@@ -95,33 +160,30 @@ function Cursos( { navigation} ){
 }
 
 function TelaCursos( {route, navigation} ){
-    var tabela = {
-        HPrimeiroAno:['Materias' , 'Carga Horaria'],
-        Dprimeiro:[
-            [' Hardwer e Softwer ' , '60']]
-    }
     return (
         
          <ScrollView style={styles.container}>
             <View style={styles.tela}>
-            <Text style={styles.titulo}>{route.params.nome}</Text>
+            
+            <Image style={styles.imagem}source={route.params.imagemCurso}/>
             <Text style={styles.texto}>{route.params.descricao}</Text>
             <Text style={styles.tituloMenor}>Materias</Text>
-            
-            <Table borderStyle={{borderWidth: 2, borderBlockColor: 'black'}}>
-                <Row data={tabela.HPrimeiroAno} style = {styles.tabela}></Row>
-                <Row data={tabela.Dprimeiro}></Row>
+            <Text style={styles.tituloMenor}>Primeiro Ano</Text>
+            <Table borderStyle={{borderWidth: 2, borderBlockColor: 'black' }}>
+                <Row data={route.params.cabecalho} textStyle={{textAlign:"center"}}></Row>
+                <Rows data={route.params.dados} textStyle={{textAlign:"center"}}></Rows>
             </Table>
 
-            <Text style={styles.tituloMenor}>Professores</Text>
-        
-            
-  
-
-
-
-            <Image style={styles.imagem}source={route.params.imagemCurso}/>
-            
+            <Text style={styles.tituloMenor}>Segundo Ano</Text>
+            <Table borderStyle={{borderWidth: 2, borderBlockColor: 'black'}}>
+                <Row data={route.params.cabecalho}></Row>
+                <Rows data={route.params.dados2}></Rows>
+            </Table>
+            <Text style={styles.tituloMenor}>Terceiro Ano</Text>
+            <Table borderStyle={{borderWidth: 2, borderBlockColor: 'black'}}>
+                <Row data={route.params.cabecalho}></Row>
+                <Rows data={route.params.dados3}></Rows>
+            </Table>
             <Button 
                 title='Voltar'
                 color="green"
@@ -174,7 +236,7 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#fff',
     width: '100%',
-    height: '200%'
+    height: '300%'
   },
   titulo: {
     marginTop: '10%',
@@ -191,7 +253,8 @@ const styles = StyleSheet.create({
 imagem: {
   marginTop: '8%',
   width: '100%',
-  height: 300
+  height: 100,
+  resizeMode:('center')
 },
   tela: {
     gap: 10,
@@ -202,8 +265,5 @@ imagem: {
   },
   botao:{
     width: '50%'
-  },
-  tabela: { flex: 1, padding: 16, paddingTop: 30, backgroundColor: '#fff' },
-  head: { height: 40, backgroundColor: '#f1f8ff' },
-  text: { margin: 6 }
+  }
 });
